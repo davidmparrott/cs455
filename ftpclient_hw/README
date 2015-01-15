@@ -1,0 +1,36 @@
+David Parrott
+CS 455
+Fall 2014
+Program 1
+
+to execute:
+./ftpclient_hw.py
+
+If there is an error locating python using this method, delete
+line one of ftpclient_hw.py and run:
+python ./ftpclient_hw.py
+
+to compile:
+program is executable in it's present form. If permissions were
+not copied correctly:
+chmod 777 ftpclient_hw.py
+
+description:
+ftpclient_hw.py uses a brute force technique to attempt to access
+an ftp server. The server name is specified in the header of the 
+script and can be easil changed. All possible ports from 1 - 65535
+are scanned looking for open ports. If the server is listening on
+a given port then the script attempts to open a connection and 
+retrieve a response. If that response contains the string "FTP"
+it is assumed that this is an FTP server.
+
+The username to attempt to use for server login is also specified
+in the header; however, the potential passwords are read from a text
+file and an attempt to login using each is made from the end of the
+file working backwards towards the beginning.
+
+After a connection is established and the script has logged in
+a search is done for files containing the strings "cs455" and
+"programming" which are then downloaded.
+
+As soon as that is retreived the script closes and exits.
